@@ -21,13 +21,68 @@
         margin-top: 55%;
         display: inline-block;
       }
+
+      #Addy1 {
+        width: 450px;
+      }
+
+      #fname {
+        width: fit-content;
+      }
+
+      #lname {
+        width: fit-content;
+      }
+
+      #Addy2, #zip, #city {
+        display: block;
+        width: fit-content;
+      }
+      
+
     </style>
     
   </head>
   <form action="/action_page.php" target="_self">
+    <div style="float:left;margin-right:5px;">
+      <label for="fname">First Name</label>
+      <input id="fname" type="text" value="" name="fname" >
+    </div>
+    <div style="float:left;">
+      <label for="lname">Last Name</label>
+      <input id="lname" type="text" value="" name="lname">
+    </div>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <label for="Addy1">Address line 1</label>
+    <input id="Addy1" type="text" value="" name="Addy1">
+
+    <br>
+    <br>
+    <br>
+    <div style="float: left;margin-right: 30px;">
+      <label for="Addy2">Address line 2</label>
+      <input id="Addy2" type="text" value="" name="Addy2">
+    </div>
+    
+    <div style="float: left;">
+      <label for="zip">Zipcode</label>
+      <input id="zip" type="text" value="" name="zip">
+    </div>
+    
+    <div style="float: right;"> 
+      <label for="city">City</label>
+      <input id="city" type="text" value="" name="city">
+    </div>
+    
+    
+
     <div id="container"> 
       <button type="button"><a href="popup.html">Back</a></button>
-      <button type="button">Save</button> 
+      <button type="submit">Save</button> 
     </div>
     
   </form>
