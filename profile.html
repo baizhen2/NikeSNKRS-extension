@@ -1,54 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="profile.css"/>
-    <style type="text/css">
-      body {
-        min-width: 600px;
-        max-width: 100%;
-        min-height: 200px;
-        max-height: 100%;
-        position: relative;
-        vertical-align: middle;
-      }
-
-      button {
-        height: 30px;
-        width: 75px;
-        outline: none;
-        text-align: center;
-        left: 0%;
-        margin-top: 55%;
-        display: inline-block;
-      }
-
-      #Addy1 {
-        width: 450px;
-      }
-
-      #fname {
-        width: fit-content;
-      }
-
-      #lname {
-        width: fit-content;
-      }
-
-      #Addy2, #zip, #city {
-        display: block;
-        width: fit-content;
-      }
-      
-
-    </style>
-    
+    <link rel="stylesheet" type="text/css" href="profile.css"/> 
   </head>
   <form action="/action_page.php" target="_self">
     <div style="float:left;margin-right:5px;">
       <label for="fname">First Name</label>
       <input id="fname" type="text" value="" name="fname" >
     </div>
-    <div style="float:left;">
+    <div style="float: right;margin-right:30px;">
       <label for="lname">Last Name</label>
       <input id="lname" type="text" value="" name="lname">
     </div>
@@ -78,7 +38,48 @@
       <input id="city" type="text" value="" name="city">
     </div>
     
+    <br>
+    <br>
+    <br>
+    <div style="float: left;margin-right: 30px;">
+      <label for="state">State (NY)</label>
+      <input id="state" type="text" value="" name="state">
+    </div>
+
+    <div style="float: left;">
+      <label for="country">Country (US)</label>
+      <input id="country" type="text" value="" name="country">
+    </div>
     
+    <div style="float: right;"> 
+      <label for="phone">Phone #</label>
+      <input id="phone" type="text" value="" name="phone">
+    </div>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <label for="card">Card Number</label>
+    <input id="card" type="text" value="" name="card">
+
+    <br>
+    <br>
+    <div style="float: left;margin-right: 30px;">
+      <label for="month">Month</label>
+      <input id="month" type="text" value="" name="month">
+    </div>
+
+    <div style="float: left;">
+      <label for="year">Year</label>
+      <input id="year" type="text" value="" name="year">
+    </div>
+    
+    <div style="float: right;"> 
+      <label for="cvv">CVV</label>
+      <input id="cvv" type="text" value="" name="cvv">
+    </div>
 
     <div id="container"> 
       <button type="button"><a href="popup.html">Back</a></button>
