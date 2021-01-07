@@ -1,14 +1,29 @@
-chrome.runtime.onInstalled.addListener(function() {
-    chrome.storage.sync.set({color: '#3aa757'}, function() {
-      console.log('The color is green.');
-    });
-    chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
-      chrome.declarativeContent.onPageChanged.addRules([{
-        conditions: [new chrome.declarativeContent.PageStateMatcher({
-          pageUrl: {hostContains: '.'},
-        })
-        ],
-            actions: [new chrome.declarativeContent.ShowPageAction()]
-      }]);
-    });
-});
+var config = {
+  mode: "fixed_servers",
+  rules: {
+  singleProxy: {
+      scheme: "http",
+      host: "",
+      port: parseInt()
+  },
+  bypassList: ["localhost"]
+  }
+};
+
+chrome.proxy.settings.set({value: config, scope: "regular"}, function() {});
+
+function callbackFn(details) {
+return {
+  authCredentials: {
+      username: "",
+      password: ""
+  }
+};
+}
+
+chrome.webRequest.onAuthRequired.addListener(
+      callbackFn,
+      {urls: ["<all_urls>"]},
+      ['blocking']
+);
+
