@@ -26,4 +26,3 @@ chrome.webRequest.onAuthRequired.addListener(
       {urls: ["<all_urls>"]},
       ['blocking']
 );
-
