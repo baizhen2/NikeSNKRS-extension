@@ -3,8 +3,8 @@ var config = {
   rules: {
   singleProxy: {
       scheme: "http",
-      host: "",
-      port: parseInt()
+      host: "",  //ip here
+      port: parseInt() //port here
   },
   bypassList: ["localhost"]
   }
@@ -15,8 +15,8 @@ chrome.proxy.settings.set({value: config, scope: "regular"}, function() {});
 function callbackFn(details) {
 return {
   authCredentials: {
-      username: "",
-      password: ""
+      username: "", //username here
+      password: "" //password here
   }
 };
 }
