@@ -25,6 +25,7 @@
         "unlimitedStorage",
         "<all_urls>",
         "webRequest",
-        "webRequestBlocking"
+        "webRequestBlocking",
+        "storage"
     ]
 }

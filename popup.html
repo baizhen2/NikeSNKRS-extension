@@ -2,6 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="button.css"/>
+    <script src="storage.js"></script>
     <style>
       button {
         height: 30px;
@@ -10,14 +11,17 @@
       }
     </style>
   </head>
-  <form action="/popup.php" method="POST">
+  <form>
     <label for="Account">Account Email:</label><br>
     <input type="text" id="Account" name="Account"><br>
     <label for="Password">Password:</label><br>
     <input type="text" id="Password" name="Password">
+
+
     <label for="Proxy">Proxy:</label><br>
     <input type="text" id="Proxy" name="Proxy">
-    <input type="submit" value="Save">
+    <input type="submit" value="Save" id="button">
+    <input type="button" id="Load" value="Load contents">
   </form>
   <a href="profile.html" class="previous">Profile &#187;</a>
 </html>
