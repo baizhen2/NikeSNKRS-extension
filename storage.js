@@ -10,11 +10,14 @@ window.onload = function() {
         myStorage.setItem('password', password);
         myStorage.setItem('proxy', proxy);
 
-        alert("success!")
+        
     }
 
     document.getElementById('Load').onclick = function() {
-        var bob = myStorage.getItem('account');
-        alert(bob);
+        document.getElementById('Account').value = myStorage.getItem('account');
+        document.getElementById('Password').value = myStorage.getItem('password');
+        document.getElementById('Proxy').value = myStorage.getItem('proxy');
     }
+
+
 }
