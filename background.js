@@ -1,4 +1,4 @@
-var config = {
+/*var config = {
   mode: "fixed_servers",
   rules: {
   singleProxy: {
@@ -25,4 +25,4 @@ chrome.webRequest.onAuthRequired.addListener(
       callbackFn,
       {urls: ["<all_urls>"]},
       ['blocking']
-);
+);*/
