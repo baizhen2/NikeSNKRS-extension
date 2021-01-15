@@ -1,5 +1,3 @@
-var myStorage = window.localStorage;
-
 window.onload = function() {
     document.getElementById('save').onclick = function() {
         var fname = document.getElementById('fname').value;
@@ -16,36 +14,36 @@ window.onload = function() {
         var year = document.getElementById('year').value;
         var cvv = document.getElementById('cvv').value;
 
-        myStorage.setItem('fname', fname);
-        myStorage.setItem('lname', lname);
-        myStorage.setItem('addressone', addressone);
-        myStorage.setItem('addresstwo', addresstwo);
-        myStorage.setItem('zip', zip);
-        myStorage.setItem('city', city);
-        myStorage.setItem('state', state);
-        myStorage.setItem('country', country);
-        myStorage.setItem('phone', phone);
-        myStorage.setItem('card', card);
-        myStorage.setItem('month', month);
-        myStorage.setItem('year', year);
-        myStorage.setItem('cvv', cvv);
+        localStorage.setItem('fname', fname);
+        localStorage.setItem('lname', lname);
+        localStorage.setItem('addressone', addressone);
+        localStorage.setItem('addresstwo', addresstwo);
+        localStorage.setItem('zip', zip);
+        localStorage.setItem('city', city);
+        localStorage.setItem('state', state);
+        localStorage.setItem('country', country);
+        localStorage.setItem('phone', phone);
+        localStorage.setItem('card', card);
+        localStorage.setItem('month', month);
+        localStorage.setItem('year', year);
+        localStorage.setItem('cvv', cvv);
 
     }
 
     document.getElementById('reload').onclick = function() {
-        document.getElementById('fname').value = myStorage.getItem('fname');
-        document.getElementById('lname').value = myStorage.getItem('lname');
-        document.getElementById('Addy1').value = myStorage.getItem('addressone');
-        document.getElementById('Addy2').value = myStorage.getItem('addresstwo');
-        document.getElementById('zip').value = myStorage.getItem('zip');
-        document.getElementById('city').value = myStorage.getItem('city');
-        document.getElementById('state').value = myStorage.getItem('state');
-        document.getElementById('country').value = myStorage.getItem('country');
-        document.getElementById('phone').value = myStorage.getItem('phone');
-        document.getElementById('card').value = myStorage.getItem('card');
-        document.getElementById('month').value = myStorage.getItem('month');
-        document.getElementById('year').value = myStorage.getItem('year');
-        document.getElementById('cvv').value = myStorage.getItem('cvv');
+        document.getElementById('fname').value = localStorage.getItem('fname');
+        document.getElementById('lname').value = localStorage.getItem('lname');
+        document.getElementById('Addy1').value = localStorage.getItem('addressone');
+        document.getElementById('Addy2').value = localStorage.getItem('addresstwo');
+        document.getElementById('zip').value = localStorage.getItem('zip');
+        document.getElementById('city').value = localStorage.getItem('city');
+        document.getElementById('state').value = localStorage.getItem('state');
+        document.getElementById('country').value = localStorage.getItem('country');
+        document.getElementById('phone').value = localStorage.getItem('phone');
+        document.getElementById('card').value = localStorage.getItem('card');
+        document.getElementById('month').value = localStorage.getItem('month');
+        document.getElementById('year').value = localStorage.getItem('year');
+        document.getElementById('cvv').value = localStorage.getItem('cvv');
     }
 
 
