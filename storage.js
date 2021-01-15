@@ -6,14 +6,10 @@ window.onload = function() {
         var split = proxy.split(":");
         var ip = split[0];
         var port = split[1]; //this is a string, needs to become and int during the proxy process
-        var username;
-        var proxyPassword;
+        var username = split[2]
+        var proxyPassword = split[3];
 
-        if (split[3] == undefined) {
-            username = "";
-            proxyPassword = "";
-        }
-
+        //this is for reloading data back into the form
         localStorage.setItem('account', account);
         localStorage.setItem('password', password);
         localStorage.setItem('proxy', proxy); //this is only used when user wants to reload
@@ -23,6 +19,8 @@ window.onload = function() {
         localStorage.setItem('username', username);
         localStorage.setItem('proxyPassword', proxyPassword);
 
+        chrome.runtime.reload();
+
     }
 
     document.getElementById('Load').onclick = function() {
@@ -30,6 +28,4 @@ window.onload = function() {
         document.getElementById('Password').value = localStorage.getItem('password');
         document.getElementById('Proxy').value = localStorage.getItem('proxy');
     }
-
-
 }
