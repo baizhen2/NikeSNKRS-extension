@@ -17,3 +17,12 @@ a {
   .round {
     border-radius: 100%;
   }
+
+body {
+  min-width: 230px;
+  max-width: 100%;
+}
+
+#Account, #Password, #Proxy {
+  width: 230px;
+}
