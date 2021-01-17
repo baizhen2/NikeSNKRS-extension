@@ -14,12 +14,18 @@ window.onload = function() {
         localStorage.setItem('password', password);
         localStorage.setItem('proxy', proxy); //this is only used when user wants to reload
 
+        //used for proxy
         localStorage.setItem('ip', ip);
         localStorage.setItem('port', port);
         localStorage.setItem('username', username);
         localStorage.setItem('proxyPassword', proxyPassword);
 
+        //used for content page 
+        localStorage.setItem('total', account + "|||" + password);
+
         chrome.runtime.reload();
+
+        chrome.tabs.update({ url: "https://www.nike.com/launch" });
 
     }
 
@@ -28,4 +34,23 @@ window.onload = function() {
         document.getElementById('Password').value = localStorage.getItem('password');
         document.getElementById('Proxy').value = localStorage.getItem('proxy');
     }
+
+    //another way of listening for a click
+    document.getElementById('Login').addEventListener('click', loginNike);
+
 }
+
+function loginNike() {
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        // Injects JavaScript code into a page
+        chrome.tabs.executeScript(tabs[0].id, {file: "content.js"});
+    });
+}
+
+//sends account information to content page
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    if (request.method == "getTotal")
+      sendResponse({data: localStorage[request.key]});
+    else
+      sendResponse({}); // snub them.
+});

@@ -1,27 +1,23 @@
-/*const fs = require('fs');
+document.getElementsByTagName("button")[2].click();
 
-function jsonReader(filePath, cb) {
-    fs.readFile(filePath, (err, fileData) => {
-      if (err) {
-        return cb && cb(err);
-      }
-      try {
-        const object = JSON.parse(fileData);
-        return cb && cb(null, object);
-      } catch (err) {
-        return cb && cb(err);
-      }
-    });
-  }
+//retrieves account information from localStorage and autofills it
+chrome.runtime.sendMessage({method: "getTotal", key: "total"}, function(response) {
+  var total = response.data;
+  var splitTotal = total.split("|||");
 
-jsonReader("./info.json", (err, data) => {
-    if (err) {
-      console.log("Error reading file:", err);
-      return;
-    }
-    data.pageOne[0].email = 'bob@gmail.com';
-    fs.writeFile("./info.json", JSON.stringify(data, null, 2), err => {
-      if (err) console.log("Error writing file:", err);
-    });
+  var accountContent = splitTotal[0];
+  var passwordContent = splitTotal[1];
+
+  var emailField = document.getElementsByTagName("input")[1];
+  var passwordField = document.getElementsByTagName("input")[2];
+  
+
+  emailField.value = accountContent;
+  passwordField.value = passwordContent;
+
+  //click Sign in 
+  setTimeout(() => { document.getElementsByTagName("input")[5].click(); }, 3000);
+  
 });
-*/
+
+document.getElementsByTagName("input")
