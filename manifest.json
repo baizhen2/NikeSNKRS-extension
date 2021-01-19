@@ -4,7 +4,7 @@
     "manifest_version": 2,
     "content_scripts": [
         {
-            "matches": ["*://nike.com/*"],
+            "matches": ["*://*.nike.com/*"],
             "js": ["content.js"]
         }
     ],
@@ -32,6 +32,7 @@
         "webRequest",
         "webRequestBlocking",
         "storage",
-        "activeTab"
+        "activeTab",
+        "cookies"
     ]
 }

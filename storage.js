@@ -25,7 +25,7 @@ window.onload = function() {
 
         chrome.runtime.reload();
 
-        chrome.tabs.update({ url: "https://www.nike.com/launch" });
+        
 
     }
 
@@ -35,8 +35,10 @@ window.onload = function() {
         document.getElementById('Proxy').value = localStorage.getItem('proxy');
     }
 
-    //another way of listening for a click
-    document.getElementById('Login').addEventListener('click', loginNike);
+    document.getElementById('Login').onclick = function() {
+        chrome.tabs.update({ url: "https://www.nike.com/launch" });
+        setTimeout(() => { loginNike(); }, 5000); //5 seconds to load site
+    }
 
 }
 
