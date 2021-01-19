@@ -46,5 +46,9 @@ window.onload = function() {
         document.getElementById('cvv').value = localStorage.getItem('cvv');
     }
 
-
+    document.getElementById('fill').onclick = function() {
+        var prefillLink = localStorage.getItem('fullLink') + "?size=" + "10" + "&" + localStorage.getItem('productID');
+        chrome.tabs.update({ url: prefillLink});
+    }
 }
+
