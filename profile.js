@@ -47,8 +47,7 @@ window.onload = function() {
     }
 
     document.getElementById('fill').onclick = function() {
-        var prefillLink = localStorage.getItem('fullLink') + "?size=" + "10" + "&" + localStorage.getItem('productID');
+        var prefillLink = localStorage.getItem('fullLink') + "?size=" + "10" + "&productId=" + localStorage.getItem('productID');
         chrome.tabs.update({ url: prefillLink});
     }
 }
-
