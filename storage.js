@@ -23,6 +23,14 @@ window.onload = function() {
         //used for content page 
         localStorage.setItem('total', account + "|||" + password);
 
+        //used for loading link
+        var link = document.getElementById('Link').value;
+        var linksplit = link.split("nike.com/launch");
+        var backLink = linksplit[1];
+        var fullLink = "https://www.nike.com/launch" + backLink; //need to rebuild link in case it does not start with https
+        localStorage.setItem('link', link);
+        localStorage.setItem('fullLink', fullLink);
+
         chrome.runtime.reload();
 
         
@@ -33,10 +41,11 @@ window.onload = function() {
         document.getElementById('Account').value = localStorage.getItem('account');
         document.getElementById('Password').value = localStorage.getItem('password');
         document.getElementById('Proxy').value = localStorage.getItem('proxy');
+        document.getElementById('Link').value = localStorage.getItem('link');
     }
 
     document.getElementById('Login').onclick = function() {
-        chrome.tabs.update({ url: "https://www.nike.com/launch" });
+        chrome.tabs.update({ url: localStorage.getItem('fullLink')});
         setTimeout(() => { loginNike(); }, 5000); //5 seconds to load site
     }
 

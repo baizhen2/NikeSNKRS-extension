@@ -23,6 +23,7 @@ body {
   max-width: 100%;
 }
 
-#Account, #Password, #Proxy {
+#Account, #Password, #Proxy, #Link {
   width: 230px;
 }
+
