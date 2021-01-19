@@ -33,8 +33,6 @@ window.onload = function() {
 
         chrome.runtime.reload();
 
-        
-
     }
 
     document.getElementById('Load').onclick = function() {
@@ -64,4 +62,5 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
       sendResponse({data: localStorage[request.key]});
     else
       sendResponse({}); // snub them.
+    localStorage.setItem('productID', request.productID);
 });

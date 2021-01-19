@@ -1,7 +1,7 @@
 document.getElementsByTagName("button")[2].click();
 
 //retrieves account information from localStorage and autofills it
-chrome.runtime.sendMessage({method: "getTotal", key: "total"}, function(response) {
+chrome.runtime.sendMessage({method: "getTotal", key: "total", productID: document.getElementsByTagName("meta")[17].content }, function(response) {
   var total = response.data;
   var splitTotal = total.split("|||");
 
@@ -19,4 +19,3 @@ chrome.runtime.sendMessage({method: "getTotal", key: "total"}, function(response
   setTimeout(() => { document.getElementsByTagName("input")[5].click(); }, (Math.floor(Math.random() * 9000) + 3000));
   
 });
-
