@@ -28,6 +28,13 @@ window.onload = function() {
         localStorage.setItem('year', year);
         localStorage.setItem('cvv', cvv);
 
+        var totalProfile = fname + "|||" + lname + "|||" + 
+            addressone + "|||" + addresstwo + "|||" + zip + "|||" + city + "|||" + 
+            state + "|||" + country + "|||" + phone + "|||" + card + "|||" + month + "|||" + 
+            year + "|||" + cvv; 
+
+        localStorage.setItem('totalProfile', totalProfile)
+
     }
 
     document.getElementById('reload').onclick = function() {
@@ -47,7 +54,21 @@ window.onload = function() {
     }
 
     document.getElementById('fill').onclick = function() {
-        var prefillLink = localStorage.getItem('fullLink') + "?size=" + "10" + "&productId=" + localStorage.getItem('productID');
+        var prefillLink = localStorage.getItem('fullLink') + "?size=10&productId=" + localStorage.getItem('productID');
         chrome.tabs.update({ url: prefillLink});
+        setTimeout(() => { fillNike(); }, 5000); //5 seconds to load site
     }
 }
+
+function fillNike() {
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        // Injects JavaScript code into a page
+        chrome.tabs.executeScript(tabs[0].id, {file: "content_profile.js"});
+    });
+}
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    if (request.method == "getProfile")
+      sendResponse({data: localStorage[request.key]});
+    else
+      sendResponse({}); // snub them.
+});
