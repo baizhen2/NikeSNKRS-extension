@@ -1,6 +1,6 @@
 # NikeSNKRS extension
 
-A chrome extension that makes it easier to enter SNKRS releases on desktop
+A chrome extension that makes it easier to enter multiple accounts on NikeSNKRS releases on desktop
 
 - Supports nike account detail login 
 - Supports IP authentication and Username:Password Proxies 
